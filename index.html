@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Teoría de Colas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Teoría de Colas</h1>
+
+     
+        <div class="form-group">
+            <label for="formula">Selecciona la fórmula que deseas calcular:</label>
+            <select id="formula">
+                <option value="" disabled selected>Elige una fórmula</option>
+                <option value="utilizacion">Utilización del sistema (ρ)</option>
+                <option value="L">Número promedio de clientes en el sistema (L)</option>
+                <option value="Lq">Número promedio de clientes en la cola (Lq)</option>
+                <option value="W">Tiempo promedio en el sistema (W)</option>
+                <option value="Wq">Tiempo promedio en la cola (Wq)</option>
+            </select>
+        </div>
+
+        
+        <div id="formulario" class="form-group" style="display:none;">
+            <label for="lambda">Tasa de llegada (λ) - clientes por hora:</label>
+            <input type="number" id="lambda" min="0" step="any" value="0">
+
+            <label for="mu">Tasa de servicio (μ) - clientes por hora:</label>
+            <input type="number" id="mu" min="0" step="any" value="0">
+
+            <button id="calcularBtn">Calcular</button>
+        </div>
+
+   
+        <div id="resultados" class="results" style="display:none;">
+            <h2>Resultados</h2>
+            <p id="resultadoFormula"></p>
+            <p id="mensajeEstabilidad"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
