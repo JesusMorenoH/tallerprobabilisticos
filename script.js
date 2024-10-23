@@ -1,24 +1,17 @@
-// Mostrar el formulario al seleccionar una fórmula
 document.getElementById('formula').addEventListener('change', function() {
     let formulaSeleccionada = this.value;
-    
-    // Mostrar el formulario de ingreso de datos
     if (formulaSeleccionada) {
         document.getElementById('formulario').style.display = 'block';
     }
     
-    // Ocultar los resultados previos
     document.getElementById('resultados').style.display = 'none';
 });
 
-// Acción del botón Calcular
 document.getElementById('calcularBtn').addEventListener('click', function() {
-    // Obtener los valores de λ (lambda) y μ (mu)
     let lambda = parseFloat(document.getElementById('lambda').value);
     let mu = parseFloat(document.getElementById('mu').value);
     let formulaSeleccionada = document.getElementById('formula').value;
 
-    // Validar si los valores ingresados son válidos
     if (isNaN(lambda) || isNaN(mu) || lambda <= 0 || mu <= 0) {
         alert("Por favor ingresa valores válidos. Asegúrate de que λ y μ sean mayores que 0.");
         return;
